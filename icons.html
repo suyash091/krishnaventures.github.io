@@ -163,24 +163,21 @@ hr {
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" id="btnsubmit" class="signupbtn">Sign Up</button>
+        <button type="submit" id="btnsubmit" id="btnSubmit" value="Submit" onclick="return Validate()">Sign Up</button>
       </div>
     </div>
   </form>
 </div>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $("#btnSubmit").click(function () {
-            var password = $("#psw").val();
-            var confirmPassword = $("#rspw").val();
-            if (password != confirmPassword) {
-                alert("Passwords do not match.");
-                return false;
-            }
-            return true;
-        });
-    });
+ <script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("psw").value;
+        var confirmPassword = document.getElementById("rpsw").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
 </script>
 <script>
 // Get the modal
